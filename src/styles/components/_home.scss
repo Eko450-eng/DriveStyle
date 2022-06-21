@@ -1,0 +1,58 @@
+@import "../helpers/_mixins.scss";
+@import "../_variables.scss";
+
+.Home{
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap:1rem;
+    .hero{
+        @include flex($fd:column);
+        background-color:$off-black-overlay;
+        background: url("./assets/BackgroundCar.png");
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 100vh;
+        h1{
+            font-size: $heading;
+            color: $heading-white;
+            margin-bottom: 0;
+        }
+        p{
+            color:white;
+        }
+    }
+    .main{
+        @extend .hero;
+        color:white;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        background:$off-black;
+        margin-bottom: 3rem;
+
+        .leistung-top{
+            @include flex($jc:flex-start);
+            margin: .5rem 0;
+        }
+        .leistung-body{
+            padding: 0 0 0 2rem
+        }
+        .leistung-wrapper{
+            width: 100%;
+        }
+        .left{
+            grid-column: 1/1;
+            grid-row: 1;
+        }
+        .center{
+            grid-column: 2/2;
+            grid-row: 2;
+        }
+        .right{
+            grid-column: 3/3;
+            grid-row: 3;
+        }
+    }
+}

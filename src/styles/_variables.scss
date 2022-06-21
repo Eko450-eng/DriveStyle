@@ -1,0 +1,33 @@
+/* Color styles */
+$dark-red: rgba(194, 0, 0, 1);
+$medium-red: rgba(216, 13, 25, 1);
+$light-red: rgba(229, 60, 67, 1);
+$success-green: rgba(12, 97, 30, 1);
+$gray: rgba(196, 196, 196, 1);
+$white: rgba(255, 255, 255, 1);
+$black: rgba(0, 0, 0, 1);
+$off-black: rgba(12, 12, 12, 1);
+$off-black-overlay: rgba(12, 12, 12, .5);
+$heading-white: rgba(255,255,255,.3);
+
+// Gradients
+$to-bottom: linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+$to-top: linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+
+/* Text-size styles */
+/* base size: lesitung-body (14px) */
+$disclaimer: 1.04rem;
+$heading: 6.73rem;
+$sub-heading: 1.74rem;
+$leistung-heading: 1.74rem;
+$lesitung-preis: 1.74rem;
+$lesitung-body: 1rem;
+$nav-link: 1.09rem;
+$wohnmobil-title: 4.29rem;
+$wohnmobil-leistung: 1rem;
+$wohnmobil-price: 0.82rem;
+$success-text: 1.43rem;
+$form-text: 1.43rem;
+$register-text: 0.86rem;
+$footer: 0.86rem;
+$form-title: 4.29rem;

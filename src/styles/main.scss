@@ -1,0 +1,30 @@
+@use './components/navbar';
+@use './components/home';
+@use './components/footer';
+@import "./helpers/_mixins.scss";
+@import "_variables.scss";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow:hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.App{
+    overflow-x:hidden;
+    width: 100vw;
+    height: 100vh;
+    background: $off-black;
+}
+
+.ComingSoon{
+    @include flex();
+    height: 100%;
+    color:white;
+}
