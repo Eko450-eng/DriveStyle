@@ -1,0 +1,51 @@
+@import "../helpers/_mixins.scss";
+@import "../_variables.scss";
+@import "./_home.scss";
+
+.Wohnmobil{
+    @extend .Home;
+    display: grid;
+    color:white;
+    gap: 1em;
+    grid-template-areas:
+        "heading heading heading"
+        "infos image ."
+        "button button button";
+    grid-template-rows: 30% 1fr 20%;
+    grid-template-columns: 1fr 1fr;
+    margin:0 auto;
+    width: 85%;
+
+    @media (max-width: $large){
+        @include flex($fd: column);
+    }
+
+    .womo-hero{
+        @include flex($jc:flex-start);
+        grid-area: heading;
+    }
+    .infos{
+        grid-area: infos;
+        @include flex($fd: column, $ai:flex-start);
+        div{
+            width: 100%;
+            display:grid;
+            grid-template-columns: repeat(2, 1fr)
+        }
+    }
+    .images{
+        img{
+            width: 100%;
+        }
+        grid-area: image;
+    }
+    Button{
+        margin: 0 auto;
+        grid-area: button;
+    }
+}
+
+.form-submit-wrapper{
+    @include flex();
+    margin-top: 2em;
+}

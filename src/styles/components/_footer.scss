@@ -3,16 +3,23 @@
 
 .Footer{
     @include flex($jc:space-between);
-    padding: 1rem 3rem;
+    padding: 1em 3em;
     background:$to-top;
     color:white;
     text-align: center;
     height: fit-content;
+    font-size: $footer;
+    @media (max-width: $tablet){
+        justify-content: center;
+    }
+
     .socials{
-        .icons{
-            font-size: 2rem;
-            padding: .5rem;
-        }
         @include flex();
+
+        .icons{
+            font-size: calc($footer*2);
+            padding: .5em;
+            colors:white;
+        }
     }
 }
