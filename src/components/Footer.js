@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { Link, Route } from 'react-router-dom'
 
 function Footer(){
 	return <div className="Footer">
@@ -17,11 +18,19 @@ function Footer(){
                <p>info@drivestyle.info</p>
              </div>
              <div className="socials">
-               <FontAwesomeIcon className='icons' icon={faEnvelope}/>
-               <FontAwesomeIcon className='icons' icon={faInstagram}/>
+               <a href="email:info@drivestyle.info">
+                <FontAwesomeIcon className='icons' icon={faEnvelope}/>
+               </a>
+               <a href="https://instagram.com/__drivestyle__/" target="_blank" rel="noreferrer">
+                <FontAwesomeIcon className='icons' icon={faInstagram}/>
+               </a>
                <FontAwesomeIcon className='icons' icon={faFacebook}/>
-               <FontAwesomeIcon className='icons' icon={faPhone}/>
+               <a href="tel:017641536637" >
+                <FontAwesomeIcon className='icons' icon={faPhone}/>
+               </a>
              </div>
 		   </div>
 }
+
+
 export default Footer

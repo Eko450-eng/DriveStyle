@@ -1,42 +1,33 @@
-import React from 'react';
-
-const leistungen = [
-    {
-        title:"LEISTUNGEN",
-        price: 30,
-        body: "Tempor non lectus, magnis dui nibh dapibus duis, eget, purus elementum conubia sollicitudin cubilia erat ac augue ac tempus. Molestie et erat bibendum a, dictumst ante dis. Hendrerit risus, ridiculus neque orci nascetur sit. Netus et sapien a, vivamus mollis. Potenti, cubilia taciti fusce nonummy sodales porttitor urna nunc commodo elit."
-    },
-    {
-        title:"LEISTUNGEN",
-        price: 30,
-        body: "Tempor non lectus, magnis dui nibh dapibus duis, eget, purus elementum conubia sollicitudin cubilia erat ac augue ac tempus. Molestie et erat bibendum a, dictumst ante dis. Hendrerit risus, ridiculus neque orci nascetur sit. Netus et sapien a, vivamus mollis. Potenti, cubilia taciti fusce nonummy sodales porttitor urna nunc commodo elit."
-    },
-    {
-        title:"LEISTUNGEN",
-        price: 30,
-        body: "Tempor non lectus, magnis dui nibh dapibus duis, eget, purus elementum conubia sollicitudin cubilia erat ac augue ac tempus. Molestie et erat bibendum a, dictumst ante dis. Hendrerit risus, ridiculus neque orci nascetur sit. Netus et sapien a, vivamus mollis. Potenti, cubilia taciti fusce nonummy sodales porttitor urna nunc commodo elit."
-    },
-    {
-        title:"LEISTUNGEN",
-        price: 30,
-        body: "Tempor non lectus, magnis dui nibh dapibus duis, eget, purus elementum conubia sollicitudin cubilia erat ac augue ac tempus. Molestie et erat bibendum a, dictumst ante dis. Hendrerit risus, ridiculus neque orci nascetur sit. Netus et sapien a, vivamus mollis. Potenti, cubilia taciti fusce nonummy sodales porttitor urna nunc commodo elit."
-    },
-    {
-        title:"LEISTUNGEN",
-        price: 30,
-        body: "Tempor non lectus, magnis dui nibh dapibus duis, eget, purus elementum conubia sollicitudin cubilia erat ac augue ac tempus. Molestie et erat bibendum a, dictumst ante dis. Hendrerit risus, ridiculus neque orci nascetur sit. Netus et sapien a, vivamus mollis. Potenti, cubilia taciti fusce nonummy sodales porttitor urna nunc commodo elit."
-    },
-]
+import { collection, doc, getDoc, getDocs, onSnapshot, query } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
+import db from '../FirebaseConf'
 
 export default function Home() {
     let count = 0
+    const [ leistungen, setLeistungen ] = useState([])
+
+    const getLeistungen = async() =>{
+        const q = query(collection(db, "leistungen"))
+        const unsub = onSnapshot(q, (qs)=>{
+            qs.forEach(doc=>{
+                setLeistungen(old => [...old, doc.data()])
+            })
+        })
+    }
+
+    useEffect(()=>{
+        setLeistungen([])
+        getLeistungen()
+    },[])
+
     return (
         <div className="Home">
-            <div className="hero">
+            <div className="hero full-size">
               <h1>DRIVESTYLE</h1>
               <p>Nullam rutrum.Sed diamAliquam feugiat tellus ut neque.</p>
             </div>
             <div className="main">
+
               {
                 leistungen.map((leistung, i) => {
                     let row = (i+1).toString()
@@ -47,7 +38,6 @@ export default function Home() {
                     }else{
                         count++
                     }
-                    console.log(count)
 
                     switch(count){
                         case(1):
@@ -60,18 +50,21 @@ export default function Home() {
                             position = "right";
                             break
                     }
+
                     return (
                         <div key={leistung+i} style={{ gridRow: row }} className={ "leistung-wrapper " + position }>
                         <div className="leistung-top">
                             <h4 className="leistung-title">{leistung.title.toUpperCase()}</h4>
-                            <p className='leistung-pricetag'>`{leistung.price} €*`</p>
+                            <p className='leistung-price'>{leistung.price} €*</p>
                         </div>
                         <p className='leistung-body'>{leistung.body}</p>
                     </div>
                     )
                 })
               }
+
             </div>
+              <p className="disclaimer">*Preise sind mindestwerte, für genauere Preisangaben können Sie uns gerne kontaktieren</p>
         </div>
     );
 }

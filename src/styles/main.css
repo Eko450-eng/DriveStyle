@@ -1,23 +1,39 @@
-/* Color styles */
+/*Breakpoints */
+/*Color styles */
 /* Text-size styles */
 /* base size: lesitung-body (14px) */
+@media (min-width: 992px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .full-nav {
+    display: none;
+  }
+}
+
 .Navbar {
   background: linear-gradient(to bottom, black 30%, rgba(0, 0, 0, 0) 100%);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  flex-wrap: no-wrap;
+  padding: 1em 2em;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  right: 2em;
+  font-size: 1.09em;
+  width: 100%;
 }
 .Navbar .logo {
-  height: 2rem;
+  height: 2em;
 }
 .Navbar .link, .Navbar .activeLink {
-  margin-inline: 1rem;
+  margin-inline: 1em;
   color: white;
   text-decoration: none;
   position: relative;
@@ -28,7 +44,7 @@
   width: 100%;
   height: 3px;
   background: #c4c4c4;
-  bottom: -0.4rem;
+  bottom: -0.4em;
   transform-origin: left;
   left: 0;
   transform: scaleX(0);
@@ -45,70 +61,124 @@
   transform: scaleX(1);
 }
 
-/* Color styles */
+/*Breakpoints */
+/*Color styles */
 /* Text-size styles */
 /* base size: lesitung-body (14px) */
-.Home {
+.full-size {
+  min-height: max-content;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.Home, .Home-small {
   width: 100%;
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 1em;
 }
-.Home .hero, .Home .main {
+.Home-small {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+.Home .disclaimer, .Home-small .disclaimer {
+  font-size: 1.04em;
+  color: #c4c4c4;
+  padding: 1em;
+}
+.Home .hero, .Home .main, .Home .Home-small .main, .Home-small .Home .main, .Home .hero-no-car, .Home .Home-small .hero-no-car, .Home-small .Home .hero-no-car, .Home-small .hero, .Home-small .main, .Home-small .hero-no-car {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   background-color: rgba(12, 12, 12, 0.5);
   background: url("./assets/BackgroundCar.png");
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
 }
-.Home .hero h1, .Home .main h1 {
-  font-size: 6.73rem;
+.Home .hero h1, .Home .main h1, .Home .Home-small .main h1, .Home-small .Home .main h1, .Home .hero-no-car h1, .Home .Home-small .hero-no-car h1, .Home-small .Home .hero-no-car h1, .Home .hero .no-transparency, .Home .main .no-transparency, .Home .hero-no-car .no-transparency, .Home-small .hero h1, .Home-small .main h1, .Home-small .hero-no-car h1, .Home-small .hero .no-transparency, .Home-small .main .no-transparency, .Home-small .hero-no-car .no-transparency {
+  font-size: 6.73em;
   color: rgba(255, 255, 255, 0.3);
   margin-bottom: 0;
 }
-.Home .hero p, .Home .main p {
+.Home .hero .no-transparency, .Home .main .no-transparency, .Home .hero-no-car .no-transparency, .Home-small .hero .no-transparency, .Home-small .main .no-transparency, .Home-small .hero-no-car .no-transparency {
   color: white;
 }
-.Home .main {
+.Home .hero p, .Home .main p, .Home .Home-small .main p, .Home-small .Home .main p, .Home .hero-no-car p, .Home .Home-small .hero-no-car p, .Home-small .Home .hero-no-car p, .Home-small .hero p, .Home-small .main p, .Home-small .hero-no-car p {
+  font-size: 1.74em;
+  color: white;
+  margin: 0 8em;
+}
+.Home .hero-no-car, .Home-small .hero-no-car {
+  background: unset;
+  text-align: center;
+}
+.Home .main, .Home-small .main {
   color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   background: #0c0c0c;
-  margin-bottom: 3rem;
+  margin-bottom: 3em;
 }
-.Home .main .leistung-top {
+@media (max-width: 1200px) {
+  .Home .main, .Home-small .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+.Home .main .leistung-top, .Home-small .main .leistung-top {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 0.5rem 0;
+  flex-wrap: wrap;
+  margin: 0.5em 0;
 }
-.Home .main .leistung-body {
-  padding: 0 0 0 2rem;
+@media (max-width: 1200px) {
+  .Home .main .leistung-top, .Home-small .main .leistung-top {
+    justify-content: center;
+  }
 }
-.Home .main .leistung-wrapper {
-  width: 100%;
+.Home .main .leistung-title, .Home-small .main .leistung-title {
+  font-size: 1.74em;
+  margin-right: 1em;
 }
-.Home .main .left {
+.Home .main .leistung-price, .Home-small .main .leistung-price {
+  font-size: 1.74em;
+  margin: 0;
+}
+.Home .main .leistung-body, .Home-small .main .leistung-body {
+  margin-left: 0 clamp(0px, 2em, 20%);
+  font-size: 1em;
+}
+.Home .main .leistung-wrapper, .Home-small .main .leistung-wrapper {
+  width: fit-content;
+  height: fit-content;
+}
+.Home .main .left, .Home-small .main .left {
   grid-column: 1/1;
   grid-row: 1;
 }
-.Home .main .center {
+.Home .main .center, .Home-small .main .center {
   grid-column: 2/2;
   grid-row: 2;
 }
-.Home .main .right {
+.Home .main .right, .Home-small .main .right {
   grid-column: 3/3;
   grid-row: 3;
 }
 
-/* Color styles */
+/*Breakpoints */
+/*Color styles */
 /* Text-size styles */
 /* base size: lesitung-body (14px) */
 .Footer {
@@ -116,24 +186,214 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  flex-wrap: wrap;
+  padding: 1em 3em;
   background: linear-gradient(to top, black 30%, rgba(0, 0, 0, 0) 100%);
   color: white;
   text-align: center;
   height: fit-content;
+  font-size: 0.86em;
+}
+@media (max-width: 768px) {
+  .Footer {
+    justify-content: center;
+  }
 }
 .Footer .socials {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 .Footer .socials .icons {
-  font-size: 2rem;
-  padding: 0.5rem;
+  font-size: 1.72em;
+  padding: 0.5em;
+  colors: white;
 }
 
-/* Color styles */
+/*Breakpoints */
+/*Color styles */
+/* Text-size styles */
+/* base size: lesitung-body (14px) */
+/*Breakpoints */
+/*Color styles */
+/* Text-size styles */
+/* base size: lesitung-body (14px) */
+.full-size {
+  min-height: max-content;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.Home, .Wohnmobil, .Home-small {
+  width: 100%;
+  display: grid;
+  gap: 1em;
+}
+.Home-small {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.Home .disclaimer, .Wohnmobil .disclaimer, .Home-small .disclaimer {
+  font-size: 1.04em;
+  color: #c4c4c4;
+  padding: 1em;
+}
+.Home .hero, .Wohnmobil .hero, .Home .main, .Wohnmobil .main, .Home .Home-small .main, .Home-small .Home .main, .Home .hero-no-car, .Wohnmobil .hero-no-car, .Home .Home-small .hero-no-car, .Home-small .Home .hero-no-car, .Home-small .hero, .Home-small .main, .Home-small .hero-no-car {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgba(12, 12, 12, 0.5);
+  background: url("./assets/BackgroundCar.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.Home .hero h1, .Wohnmobil .hero h1, .Home .main h1, .Wohnmobil .main h1, .Home .Home-small .main h1, .Home-small .Home .main h1, .Home .hero-no-car h1, .Wohnmobil .hero-no-car h1, .Home .Home-small .hero-no-car h1, .Home-small .Home .hero-no-car h1, .Home .hero .no-transparency, .Wohnmobil .hero .no-transparency, .Home .main .no-transparency, .Wohnmobil .main .no-transparency, .Home .hero-no-car .no-transparency, .Wohnmobil .hero-no-car .no-transparency, .Home-small .hero h1, .Home-small .main h1, .Home-small .hero-no-car h1, .Home-small .hero .no-transparency, .Home-small .main .no-transparency, .Home-small .hero-no-car .no-transparency {
+  font-size: 6.73em;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 0;
+}
+.Home .hero .no-transparency, .Wohnmobil .hero .no-transparency, .Home .main .no-transparency, .Wohnmobil .main .no-transparency, .Home .hero-no-car .no-transparency, .Wohnmobil .hero-no-car .no-transparency, .Home-small .hero .no-transparency, .Home-small .main .no-transparency, .Home-small .hero-no-car .no-transparency {
+  color: white;
+}
+.Home .hero p, .Wohnmobil .hero p, .Home .main p, .Wohnmobil .main p, .Home .Home-small .main p, .Home-small .Home .main p, .Home .hero-no-car p, .Wohnmobil .hero-no-car p, .Home .Home-small .hero-no-car p, .Home-small .Home .hero-no-car p, .Home-small .hero p, .Home-small .main p, .Home-small .hero-no-car p {
+  font-size: 1.74em;
+  color: white;
+  margin: 0 8em;
+}
+.Home .hero-no-car, .Wohnmobil .hero-no-car, .Home-small .hero-no-car {
+  background: unset;
+  text-align: center;
+}
+.Home .main, .Wohnmobil .main, .Home-small .main {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background: #0c0c0c;
+  margin-bottom: 3em;
+}
+@media (max-width: 1200px) {
+  .Home .main, .Wohnmobil .main, .Home-small .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+.Home .main .leistung-top, .Wohnmobil .main .leistung-top, .Home-small .main .leistung-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0.5em 0;
+}
+@media (max-width: 1200px) {
+  .Home .main .leistung-top, .Wohnmobil .main .leistung-top, .Home-small .main .leistung-top {
+    justify-content: center;
+  }
+}
+.Home .main .leistung-title, .Wohnmobil .main .leistung-title, .Home-small .main .leistung-title {
+  font-size: 1.74em;
+  margin-right: 1em;
+}
+.Home .main .leistung-price, .Wohnmobil .main .leistung-price, .Home-small .main .leistung-price {
+  font-size: 1.74em;
+  margin: 0;
+}
+.Home .main .leistung-body, .Wohnmobil .main .leistung-body, .Home-small .main .leistung-body {
+  margin-left: 0 clamp(0px, 2em, 20%);
+  font-size: 1em;
+}
+.Home .main .leistung-wrapper, .Wohnmobil .main .leistung-wrapper, .Home-small .main .leistung-wrapper {
+  width: fit-content;
+  height: fit-content;
+}
+.Home .main .left, .Wohnmobil .main .left, .Home-small .main .left {
+  grid-column: 1/1;
+  grid-row: 1;
+}
+.Home .main .center, .Wohnmobil .main .center, .Home-small .main .center {
+  grid-column: 2/2;
+  grid-row: 2;
+}
+.Home .main .right, .Wohnmobil .main .right, .Home-small .main .right {
+  grid-column: 3/3;
+  grid-row: 3;
+}
+
+.Wohnmobil {
+  display: grid;
+  color: white;
+  gap: 1em;
+  grid-template-areas: "heading heading heading" "infos image ." "button button button";
+  grid-template-rows: 30% 1fr 20%;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  width: 85%;
+}
+@media (max-width: 1200px) {
+  .Wohnmobil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+.Wohnmobil .womo-hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  grid-area: heading;
+}
+.Wohnmobil .infos {
+  grid-area: infos;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.Wohnmobil .infos div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.Wohnmobil .images {
+  grid-area: image;
+}
+.Wohnmobil .images img {
+  width: 100%;
+}
+.Wohnmobil Button {
+  margin: 0 auto;
+  grid-area: button;
+}
+
+.form-submit-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2em;
+}
+
+/*Breakpoints */
+/*Color styles */
 /* Text-size styles */
 /* base size: lesitung-body (14px) */
 * {
@@ -142,16 +402,31 @@
   padding: 0;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 body {
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+  font-size: 14px;
+  background: #0c0c0c;
+}
+@media (max-width: 992px) {
+  body {
+    font-size: 10px;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 6px;
+  }
 }
 
 .App {
   overflow-x: hidden;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   background: #0c0c0c;
 }
 
@@ -160,8 +435,13 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   height: 100%;
   color: white;
+}
+
+.no-hover-button:hover {
+  background: none;
 }
 
 /*# sourceMappingURL=main.css.map */

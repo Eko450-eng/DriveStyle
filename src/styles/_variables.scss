@@ -1,4 +1,10 @@
-/* Color styles */
+/*Breakpoints */
+$mobile: 600px;
+$tablet: 768px;
+$laptop: 992px;
+$large: 1200px;
+
+/*Color styles */
 $dark-red: rgba(194, 0, 0, 1);
 $medium-red: rgba(216, 13, 25, 1);
 $light-red: rgba(229, 60, 67, 1);
@@ -9,6 +15,7 @@ $black: rgba(0, 0, 0, 1);
 $off-black: rgba(12, 12, 12, 1);
 $off-black-overlay: rgba(12, 12, 12, .5);
 $heading-white: rgba(255,255,255,.3);
+$heading-white-full-opa: rgba(255,255,255,1);
 
 // Gradients
 $to-bottom: linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
@@ -16,18 +23,19 @@ $to-top: linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
 
 /* Text-size styles */
 /* base size: lesitung-body (14px) */
-$disclaimer: 1.04rem;
-$heading: 6.73rem;
-$sub-heading: 1.74rem;
-$leistung-heading: 1.74rem;
-$lesitung-preis: 1.74rem;
-$lesitung-body: 1rem;
-$nav-link: 1.09rem;
-$wohnmobil-title: 4.29rem;
-$wohnmobil-leistung: 1rem;
-$wohnmobil-price: 0.82rem;
-$success-text: 1.43rem;
-$form-text: 1.43rem;
-$register-text: 0.86rem;
-$footer: 0.86rem;
-$form-title: 4.29rem;
+$heading: 6.73em;
+$sub-heading: 1.74em;
+$leistung-heading: 1.74em;
+$leistung-preis: 1.74em;
+$leistung-body: 1em;
+$footer: 0.86em;
+$disclaimer: 1.04em;
+$nav-link: 1.09em;
+
+$success-text: 1.43em;
+$form-text: 1.43em;
+$register-text: 0.86em;
+$form-title: 4.29em;
+$wohnmobil-title: 4.29em;
+$wohnmobil-leistung: 1em;
+$wohnmobil-price: 0.82em;

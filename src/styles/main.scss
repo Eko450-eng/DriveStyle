@@ -1,8 +1,11 @@
 @use './components/navbar';
 @use './components/home';
 @use './components/footer';
+@use './components/womo';
 @import "./helpers/_mixins.scss";
 @import "_variables.scss";
+
+
 
 *{
     box-sizing: border-box;
@@ -10,16 +13,27 @@
     padding: 0;
 }
 
+a{
+    color:white;
+    text-decoration: none;
+}
+
 body{
-    overflow:hidden;
-    width: 100vw;
-    height: 100vh;
+    overflow-x:hidden;
+    width: 100%;
+    font-size: 14px;
+    background: $off-black;
+    @media (max-width: $laptop){
+        font-size: 10px;
+    }
+    @media (max-width: $mobile){
+        font-size: 6px;
+    }
 }
 
 .App{
     overflow-x:hidden;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
     background: $off-black;
 }
 
@@ -27,4 +41,10 @@ body{
     @include flex();
     height: 100%;
     color:white;
+}
+
+.no-hover-button{
+    &:hover{
+        background: none;
+    }
 }
