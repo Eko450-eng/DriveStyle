@@ -5,32 +5,15 @@ import { DateRangePicker } from '@mantine/dates'
 import dayjs from 'dayjs'
 import c600 from '../styles/assets/C600.png'
 import db from '../FirebaseConf'
-import { createStyles } from '@mantine/core'
 import { useForm } from '@mantine/hooks'
 import emails from '@emailjs/browser'
+import useStyles from './FloatingStyle'
 
-
-const FloatingLabelStyle = createStyles((theme) => ({
-  root: {
-    position: 'relative',
-    marginTop: 20,
-  },
-
-  input: {
-    height: 'auto',
-    paddingTop: 18,},
-  label: {
-    position: 'absolute',
-    pointerEvents: 'none',
-    fontSize: theme.fontSizes.xs,
-    paddingLeft: theme.spacing.sm,
-    paddingTop: theme.spacing.sm / 2,
-    zIndex: 1,
-  },
-}));
 
 function Wohnmobil(){
-    const { classes } = FloatingLabelStyle()
+    const [focused, setFocused] = useState(false);
+    const [value, setValue] = useState('');
+    const { classes } = useStyles({ floating: value.trim().length !== 0 || focused });
     const [ infos, setInfos ] = useState([])
     const [ loaded, setLoaded ] = useState(false)
     const [ opened, setOpened ] = useState(false)
@@ -70,10 +53,10 @@ function Wohnmobil(){
                 mail:v.mail,
                 mobile:v.mobile,
                 favorite:v.favorite,
+                message: v.message,
             },
             process.env.REACT_APP_EMAILJS_PUBLIC_KEY
         ).then(function(response) {
-
             console.log('SUCCESS!', response.status, response.text);
         }, function(error) {
             console.log('FAILED...', error);
@@ -88,6 +71,7 @@ function Wohnmobil(){
     useEffect(()=>{
         setLoaded(true)
     },[infos])
+    const currentDate = dayjs(new Date())
 
 	return <div className="Wohnmobil full-size">
 
@@ -99,20 +83,29 @@ function Wohnmobil(){
              >
                <form
                  className="form-centered"
-                 onSubmit={form.onSubmit((values) => sendMail(values))}>
+                    onSubmit={
+                            form.onSubmit((values) => {
+                                    sendMail(values)
+                                    setOpened(false)
+                                })
+                            }>
                     <DateRangePicker
                             required
+                            minDate={currentDate.$d}
                             label="Zeitraum"
                             placeholder="In welchem Zeitraum wollen Sie mieten?"
                             classNames={classes}
                             clearable={false}
                             inputFormat="DD.MM.YYYY"
                             {...form.getInputProps('date')}
+                            onFocus={() => setFocused(true)}
+                            onBlur={() => setFocused(false)}
                     />
-                    <TextInput {...form.getInputProps('name')} required label="Name" placeholder="Max Musterman" classNames={classes} />
+                    <TextInput onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} {...form.getInputProps('name')} required label="Name" placeholder="Max Musterman" classNames={classes} />
 
-                    <TextInput {...form.getInputProps('mail')} required label="E-Mail" placeholder="max@musterman.de" classNames={classes} />
-                    <TextInput {...form.getInputProps('mobile')} required label="Telefon / WhatsApp" placeholder="0170 123 45678" classNames={classes} />
+
+                    <TextInput onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} {...form.getInputProps('mail')} required label="E-Mail" placeholder="max@musterman.de" classNames={classes} />
+                    <TextInput onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} {...form.getInputProps('mobile')} label="Telefon / WhatsApp" placeholder="0170 123 45678" classNames={classes} />
 
                     <Select
                         style={{ zIndex: 2 }}
@@ -122,6 +115,7 @@ function Wohnmobil(){
                         classNames={classes}
                         {...form.getInputProps('favorite')}
                     />
+                    <TextInput onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} {...form.getInputProps('message')} label="Wollen Sie uns noch was mitteilen?" placeholder="Optionale Nachricht" classNames={classes} />
                  <div className='form-submit-wrapper'>
                     <Button
                         styles={{

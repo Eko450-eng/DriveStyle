@@ -1,0 +1,35 @@
+@import "../helpers/_mixins.scss";
+@import "../_variables.scss";
+
+.scroll-indicator{
+    width: 2em;
+    height: 3em;
+    margin-top: 2em;
+    border: 2px solid white;
+    border-radius: 25px;
+    position: relative;
+
+    .ball{
+        width: 90%;
+        aspect-ratio: 1 / 1;
+        background: white;
+        border-radius: 25px;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%,0);
+        @include keyframes(fade){
+            0%{
+                transform: translate(-50%, 0);
+            }
+            50%{
+                transform: translate(-50%, 50%);
+            }
+            100%{
+                transform: translate(-50%, 0);
+            }
+            }
+        @include animate(fade, 3s, linear, infinite);
+    }
+
+}

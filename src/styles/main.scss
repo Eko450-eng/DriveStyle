@@ -2,6 +2,8 @@
 @use './components/home';
 @use './components/footer';
 @use './components/womo';
+@use './components/transition';
+@use './components/scrollIndicator';
 @import "./helpers/_mixins.scss";
 @import "_variables.scss";
 
@@ -24,10 +26,10 @@ body{
     font-size: 14px;
     background: $off-black;
     @media (max-width: $laptop){
-        font-size: 10px;
+        font-size: 13px;
     }
     @media (max-width: $mobile){
-        font-size: 6px;
+        font-size: 10px;
     }
 }
 
@@ -47,4 +49,25 @@ body{
     &:hover{
         background: none;
     }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: .5em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

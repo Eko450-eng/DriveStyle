@@ -31,15 +31,16 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        text-align: center;
 
-        h1{
-            font-size: $heading;
+        .heading{
+            font-size: clamp(2rem, 3rem, $heading);
             color: $heading-white;
             margin-bottom: 0;
         }
 
         .no-transparency{
-            @extend h1;
+            @extend .heading;
             color:white;
         }
 
@@ -64,7 +65,7 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
         background:$off-black;
-        margin-bottom: 3em;
+        margin:0 2em 3em 2em;
 
         @media (max-width: $large){
             @include flex();
@@ -91,8 +92,14 @@
         }
 
         .leistung-body{
-            margin-left: 0 clamp(0px, 2em, 20%) ;
+            margin-left: clamp(0px, 2em, 50%) ;
             font-size: $leistung-body;
+            @media (min-width: $tablet) and (max-width: $large){
+                margin: 0 8em;
+            }
+            @media (max-width: $tablet){
+                margin: 0 4em;
+            }
         }
 
         .leistung-wrapper{

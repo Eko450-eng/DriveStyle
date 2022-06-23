@@ -1,14 +1,16 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { useEffect, useState }from 'react'
+import { collection, onSnapshot, query } from 'firebase/firestore';
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Footer from './components/Footer'
-import ComingSoon from './components/ComingSoon'
 import Wohnmobil from './components/Wohnmobil'
 import NormalPage from './components/NormalPage'
-import "./styles/main.css"
-import { collection, onSnapshot, query } from 'firebase/firestore';
+import Cms from './components/Cms'
+
 import db from './FirebaseConf';
+import "./styles/main.css"
 
 function Instagram () {
     window.location.replace("https://www.instagram.com/eko.450")
@@ -19,6 +21,7 @@ function App() {
   const [dev, setDev] = useState(true);
   const [hagelschaden, setHagelschaden] = useState([]);
   const [gutachten, setGutachten] = useState([]);
+  const location = useLocation()
 
   const getData = async (col, state) => {
         const q = query(collection(db, col))
@@ -41,19 +44,21 @@ function App() {
 
   return (
     <div className='App'>
-      { dev && <Navbar/> }
-      { dev &&
-        <Routes>
-          <Route index path="home" element={<Home/>}/>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/wohnmobilvermietung" element={<Wohnmobil/>}/>
-          <Route path="/gutachten" element={<NormalPage title={gutachten.title} body={gutachten.body}/>}/>
-          <Route path="/hagelschaden" element={<NormalPage title={hagelschaden.title} body={hagelschaden.body}/>}/>
-          <Route path="/instagram" element={<Instagram/>}/>
-        </Routes>
-      }
-      { !dev && <ComingSoon/> }
-      { dev && <Footer /> }
+        <Navbar/>
+        <TransitionGroup component={null}>
+          <CSSTransition key={location.key} classNames="fade" timeout={500}>
+            <Routes>
+              <Route index path="home" element={<Home/>}/>
+              <Route path="/" element={<Home/>}/>
+              <Route path="/wohnmobilvermietung" element={<Wohnmobil/>}/>
+              <Route path="/gutachten" element={<NormalPage title={gutachten.title} body={gutachten.body}/>}/>
+              <Route path="/hagelschaden" element={<NormalPage title={hagelschaden.title} body={hagelschaden.body}/>}/>
+              <Route path="/instagram" element={<Instagram/>}/>
+              <Route path="/cms" element={<Cms/>}/>
+            </Routes>
+          </CSSTransition>
+        </TransitionGroup>
+      <Footer />
     </div>
   );
 }

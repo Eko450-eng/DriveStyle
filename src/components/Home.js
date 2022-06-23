@@ -1,4 +1,6 @@
 import { collection, doc, getDoc, getDocs, onSnapshot, query } from 'firebase/firestore';
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/src/ScrollTrigger'
 import React, { useEffect, useState } from 'react';
 import db from '../FirebaseConf'
 
@@ -20,12 +22,18 @@ export default function Home() {
         getLeistungen()
     },[])
 
+    gsap.fromTo(".main", {opacity:0, x:1000},{opacity:1, x:0, delay:1.5, duration:1})
+
     return (
         <div className="Home">
             <div className="hero full-size">
-              <h1>DRIVESTYLE</h1>
+              <h1 className="heading">DRIVESTYLE</h1>
               <p>Nullam rutrum.Sed diamAliquam feugiat tellus ut neque.</p>
+              <div className='scroll-indicator'>
+                <div className="ball"></div>
+              </div>
             </div>
+          <p className='marker'>t</p>
             <div className="main">
 
               {
@@ -53,7 +61,7 @@ export default function Home() {
 
                     return (
                         <div key={leistung+i} style={{ gridRow: row }} className={ "leistung-wrapper " + position }>
-                        <div className="leistung-top">
+                          <div className="leistung-top">
                             <h4 className="leistung-title">{leistung.title.toUpperCase()}</h4>
                             <p className='leistung-price'>{leistung.price} €*</p>
                         </div>

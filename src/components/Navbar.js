@@ -45,7 +45,7 @@ export default function Navbar(){
             <Menu.Item style={{textAlign:"center"}} onClick={()=>Navigate("wohnmobilvermietung")}>Wohnmobilvermietung</Menu.Item>
             <Menu.Item style={{textAlign:"center"}} onClick={()=>Navigate("gutachten")}>Gutachten</Menu.Item>
             <Menu.Item style={{textAlign:"center"}} onClick={()=>Navigate("hagelschaden")}>Hagelschaden</Menu.Item>
-            <Menu.Item style={{textAlign:"center"}} onClick={()=>Navigate("login")}>Login</Menu.Item>
+            {/* <Menu.Item style={{textAlign:"center"}} onClick={()=>Navigate("login")}>Login</Menu.Item> */}
               </Menu>
             <nav className="full-nav">
                 <NavLink
@@ -64,10 +64,10 @@ export default function Navbar(){
                     to="hagelschaden"
                     className={({ isActive }) => isActive ? "activeLink" : "link"}
                 >Hagelschaden</NavLink>
-                <NavLink
-                    to="login"
-                    className={({ isActive }) => isActive ? "activeLink" : "link"}
-                >Kundenlogin</NavLink>
+                {/* <NavLink */}
+                {/*     to="login" */}
+                {/*     className={({ isActive }) => isActive ? "activeLink" : "link"} */}
+                {/* >Kundenlogin</NavLink> */}
             </nav>
         </div>
     )
