@@ -19,7 +19,7 @@ function Instagram () {
 }
 
 function App() {
-  const [dev, setDev] = useState(false);
+  const [dev, setDev] = useState(true);
   const [hagelschaden, setHagelschaden] = useState([]);
   const [gutachten, setGutachten] = useState([]);
   const location = useLocation()

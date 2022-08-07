@@ -67,8 +67,18 @@
         background:$off-black;
         margin:0 2em 3em 2em;
 
+        min-width: fit-content;
+        max-width: fit-content;
+        width: fit-content;
+
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
+
         @media (max-width: $large){
             @include flex();
+            gap:1rem;
             text-align: center;
         }
 
@@ -89,11 +99,25 @@
         .leistung-price{
             font-size: $leistung-preis;
             margin: 0;
+            margin: 0 0 0 auto;
         }
 
         .leistung-body{
             margin-left: clamp(0px, 2em, 50%) ;
             font-size: $leistung-body;
+
+            p{
+                max-width: min-content;
+                margin:.4rem 0;
+            }
+
+
+            li{
+                text-align: left;
+                width: fit-content;
+            }
+
+
             @media (min-width: $tablet) and (max-width: $large){
                 margin: 0 8em;
             }

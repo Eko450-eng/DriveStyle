@@ -1,12 +1,12 @@
-import { collection, doc, getDoc, getDocs, onSnapshot, query } from 'firebase/firestore';
+import { collection, onSnapshot, query } from 'firebase/firestore';
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/src/ScrollTrigger'
 import React, { useEffect, useState } from 'react';
 import db from '../FirebaseConf'
 
 export default function Home() {
     let count = 0
     const [ leistungen, setLeistungen ] = useState([])
+    const [ homeTitle, setHomeTitle ] = useState([])
 
     const getLeistungen = async() =>{
         const q = query(collection(db, "leistungen"))
@@ -17,9 +17,20 @@ export default function Home() {
         })
     }
 
+    const getTitle = async() =>{
+        const q = query(collection(db, "headers"))
+        const unsub = onSnapshot(q, (qs)=>{
+            qs.forEach(doc=>{
+                let data = doc.data().home
+                setHomeTitle(()=>[...data])
+            })
+        })
+    }
+
     useEffect(()=>{
         setLeistungen([])
         getLeistungen()
+        getTitle()
     },[])
 
     gsap.fromTo(".main", {opacity:0, x:1000},{opacity:1, x:0, delay:1.5, duration:1})
@@ -28,7 +39,9 @@ export default function Home() {
         <div className="Home">
             <div className="hero full-size">
               <h1 className="heading">DRIVESTYLE</h1>
-              <p>Nullam rutrum.Sed diamAliquam feugiat tellus ut neque.</p>
+
+              {<p>{homeTitle}</p>}
+
               <div className='scroll-indicator'>
                 <div className="ball"></div>
               </div>
@@ -65,7 +78,22 @@ export default function Home() {
                             <h4 className="leistung-title">{leistung.title.toUpperCase()}</h4>
                             <p className='leistung-price'>{leistung.price} €*</p>
                         </div>
-                        <p className='leistung-body'>{leistung.body}</p>
+
+                          <ul className='leistung-body'>{
+                              leistung.body.map((leistung, index)=>{
+                                  return <li key={index}>{leistung}</li>
+                              })
+                          }</ul>
+
+                          {
+                          leistung.zusatz != undefined &&
+                            <ul className='leistung-body'> <p>Zusatzleistungen</p>{
+                                leistung.zusatz.map((leistung, index)=>{
+                                    return <li key={index}>{leistung}</li>
+                                })
+                            }</ul>
+                          }
+
                     </div>
                     )
                 })

@@ -23,13 +23,12 @@ a{
 body{
     overflow-x:hidden;
     width: 100%;
-    font-size: 14px;
+    font-size: 1vw;
     background: $off-black;
     @media (max-width: $laptop){
-        font-size: 13px;
     }
     @media (max-width: $mobile){
-        font-size: 10px;
+        font-size: 1.5vw;
     }
 }
 

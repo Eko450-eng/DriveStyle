@@ -1,0 +1,59 @@
+[18:24:11.245] Global cache location '/home/eko/.cache/typescript/4.7', safe file path '/usr/lib/node_modules/typescript/lib/typingSafeList.json', types map path /usr/lib/node_modules/typescript/lib/typesMap.json
+[18:24:11.266] Processing cache location '/home/eko/.cache/typescript/4.7'
+[18:24:11.266] Trying to find '/home/eko/.cache/typescript/4.7/package.json'...
+[18:24:11.296] Loaded content of '/home/eko/.cache/typescript/4.7/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.603"},"devDependencies":{"@types/dot":"^1.1.5","@types/react":"^18.0.15","@types/react-dom":"^18.0.5","@types/react-transition-group":"^4.4.5","@types/react-type-animation":"^1.1.1","@types/testing-library__jest-dom":"^5.14.5"}}
+[18:24:11.296] Loaded content of '/home/eko/.cache/typescript/4.7/package-lock.json'
+[18:24:11.333] Adding entry into typings cache: 'dot' => '/home/eko/.cache/typescript/4.7/node_modules/@types/dot/index.d.ts'
+[18:24:11.362] Adding entry into typings cache: 'react' => '/home/eko/.cache/typescript/4.7/node_modules/@types/react/index.d.ts'
+[18:24:11.375] Adding entry into typings cache: 'react-dom' => '/home/eko/.cache/typescript/4.7/node_modules/@types/react-dom/index.d.ts'
+[18:24:11.468] Adding entry into typings cache: 'react-transition-group' => '/home/eko/.cache/typescript/4.7/node_modules/@types/react-transition-group/index.d.ts'
+[18:24:11.510] Adding entry into typings cache: 'react-type-animation' => '/home/eko/.cache/typescript/4.7/node_modules/@types/react-type-animation/index.d.ts'
+[18:24:11.533] Adding entry into typings cache: 'testing-library__jest-dom' => '/home/eko/.cache/typescript/4.7/node_modules/@types/testing-library__jest-dom/index.d.ts'
+[18:24:11.533] Finished processing cache location '/home/eko/.cache/typescript/4.7'
+[18:24:11.533] Process id: 499123
+[18:24:11.533] NPM location: /usr/local/bin/npm (explicit '--npmLocation' not  provided)
+[18:24:11.533] validateDefaultNpmLocation: false
+[18:24:11.533] Npm config file: /home/eko/.cache/typescript/4.7/package.json
+[18:24:11.533] Updating types-registry npm package...
+[18:24:11.533] Exec: /usr/local/bin/npm install --ignore-scripts types-registry@latest
+[18:24:12.555]     Succeeded. stdout:
+    
+    changed 1 package, and audited 28 packages in 756ms
+
+3 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+[18:24:12.555] Updated types-registry npm package
+[18:24:16.608] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/usr/lib/node_modules/typescript/lib/lib.es5.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.iterable.d.ts","/usr/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/usr/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.core.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.full.d.ts","/home/eko/code/321autopflege/src/FirebaseConf.js","/home/eko/code/321autopflege/src/components/Home.js"],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/eko/code/321autopflege/src/components","kind":"discover"}
+[18:24:16.626] Loaded safelist from types map file '/usr/lib/node_modules/typescript/lib/typesMap.json'
+[18:24:16.632] Explicitly included types: []
+[18:24:16.635] Inferred typings from unresolved imports: []
+[18:24:16.635] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/eko/code/321autopflege/src/bower_components","/home/eko/code/321autopflege/src/node_modules","/home/eko/code/321autopflege/src/components/bower_components","/home/eko/code/321autopflege/src/components/node_modules"]}
+[18:24:16.635] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/eko/code/321autopflege/src/bower_components","/home/eko/code/321autopflege/src/node_modules","/home/eko/code/321autopflege/src/components/bower_components","/home/eko/code/321autopflege/src/components/node_modules"]}
+[18:24:16.636] DirectoryWatcher:: Added:: WatchInfo: /home/eko/code/321autopflege/src/bower_components
+[18:24:16.637] DirectoryWatcher:: Added:: WatchInfo: /home/eko/code/321autopflege/src/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[18:24:16.648] Elapsed:: 11.259688001126051ms DirectoryWatcher:: Added:: WatchInfo: /home/eko/code/321autopflege/src/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[18:24:16.648] DirectoryWatcher:: Added:: WatchInfo: /home/eko/code/321autopflege/src/node_modules
+[18:24:16.648] DirectoryWatcher:: Added:: WatchInfo: /home/eko/code/321autopflege/src/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[18:24:16.648] Elapsed:: 0.11815600097179413ms DirectoryWatcher:: Added:: WatchInfo: /home/eko/code/321autopflege/src/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[18:24:16.648] DirectoryWatcher:: Added:: WatchInfo: /home/eko/code/321autopflege/src/components/bower_components
+[18:24:16.648] DirectoryWatcher:: Added:: WatchInfo: /home/eko/code/321autopflege/src/components/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[18:24:16.649] Elapsed:: 0.08347899839282036ms DirectoryWatcher:: Added:: WatchInfo: /home/eko/code/321autopflege/src/components/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[18:24:16.649] DirectoryWatcher:: Added:: WatchInfo: /home/eko/code/321autopflege/src/components/node_modules
+[18:24:16.649] DirectoryWatcher:: Added:: WatchInfo: /home/eko/code/321autopflege/src/components/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[18:24:16.649] Elapsed:: 0.08453099802136421ms DirectoryWatcher:: Added:: WatchInfo: /home/eko/code/321autopflege/src/components/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[18:24:16.649] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[18:24:16.650] Response has been sent.
+[18:24:16.650] No new typings were requested as a result of typings discovery
+[18:24:36.133] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/usr/lib/node_modules/typescript/lib/lib.es5.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.iterable.d.ts","/usr/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/usr/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.core.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.full.d.ts","/home/eko/code/321autopflege/src/FirebaseConf.js","/home/eko/code/321autopflege/src/components/Home.js"],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/eko/code/321autopflege/src/components","kind":"discover"}
+[18:24:36.133] Explicitly included types: []
+[18:24:36.134] Inferred typings from unresolved imports: []
+[18:24:36.134] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/eko/code/321autopflege/src/bower_components","/home/eko/code/321autopflege/src/node_modules","/home/eko/code/321autopflege/src/components/bower_components","/home/eko/code/321autopflege/src/components/node_modules"]}
+[18:24:36.134] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/eko/code/321autopflege/src/bower_components","/home/eko/code/321autopflege/src/node_modules","/home/eko/code/321autopflege/src/components/bower_components","/home/eko/code/321autopflege/src/components/node_modules"]}
+[18:24:36.134] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[18:24:36.134] Response has been sent.
+[18:24:36.134] No new typings were requested as a result of typings discovery
