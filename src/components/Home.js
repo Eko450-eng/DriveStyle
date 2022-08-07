@@ -37,6 +37,7 @@ export default function Home() {
 
     return (
         <div className="Home">
+          <div className="background">
             <div className="hero full-size">
               <h1 className="heading">DRIVESTYLE</h1>
 
@@ -46,6 +47,7 @@ export default function Home() {
                 <div className="ball"></div>
               </div>
             </div>
+          </div>
           <p className='marker'>t</p>
             <div className="main">
 

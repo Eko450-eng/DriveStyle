@@ -89,6 +89,12 @@
   color: #c4c4c4;
   padding: 1em;
 }
+.Home .background, .Home-small .background {
+  background: url("./assets/BackgroundCar.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .Home .hero, .Home .main, .Home .Home-small .main, .Home-small .Home .main, .Home .hero-no-car, .Home .Home-small .hero-no-car, .Home-small .Home .hero-no-car, .Home-small .hero, .Home-small .main, .Home-small .hero-no-car {
   display: flex;
   flex-direction: column;
@@ -96,11 +102,8 @@
   align-items: center;
   flex-wrap: wrap;
   background-color: rgba(12, 12, 12, 0.5);
-  background: url("./assets/BackgroundCar.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   text-align: center;
+  backdrop-filter: contrast(0.8);
 }
 .Home .hero .heading, .Home .main .heading, .Home .hero-no-car .heading, .Home .hero .no-transparency, .Home .main .no-transparency, .Home .hero-no-car .no-transparency, .Home-small .hero .heading, .Home-small .main .heading, .Home-small .hero-no-car .heading, .Home-small .hero .no-transparency, .Home-small .main .no-transparency, .Home-small .hero-no-car .no-transparency {
   font-size: clamp(2rem, 3rem, 6.73em);
@@ -272,6 +275,12 @@
   color: #c4c4c4;
   padding: 1em;
 }
+.Home .background, .Wohnmobil .background, .Home-small .background {
+  background: url("./assets/BackgroundCar.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .Home .hero, .Wohnmobil .hero, .Home .main, .Wohnmobil .main, .Home .Home-small .main, .Home-small .Home .main, .Home .hero-no-car, .Wohnmobil .hero-no-car, .Home .Home-small .hero-no-car, .Home-small .Home .hero-no-car, .Home-small .hero, .Home-small .main, .Home-small .hero-no-car {
   display: flex;
   flex-direction: column;
@@ -279,11 +288,8 @@
   align-items: center;
   flex-wrap: wrap;
   background-color: rgba(12, 12, 12, 0.5);
-  background: url("./assets/BackgroundCar.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   text-align: center;
+  backdrop-filter: contrast(0.8);
 }
 .Home .hero .heading, .Wohnmobil .hero .heading, .Home .main .heading, .Wohnmobil .main .heading, .Home .hero-no-car .heading, .Wohnmobil .hero-no-car .heading, .Home .hero .no-transparency, .Wohnmobil .hero .no-transparency, .Home .main .no-transparency, .Wohnmobil .main .no-transparency, .Home .hero-no-car .no-transparency, .Wohnmobil .hero-no-car .no-transparency, .Home-small .hero .heading, .Home-small .main .heading, .Home-small .hero-no-car .heading, .Home-small .hero .no-transparency, .Home-small .main .no-transparency, .Home-small .hero-no-car .no-transparency {
   font-size: clamp(2rem, 3rem, 6.73em);

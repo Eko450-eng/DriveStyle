@@ -23,15 +23,18 @@
         padding: 1em;
     }
 
-
-    .hero{
-        @include flex($fd:column);
-        background-color:$off-black-overlay;
+    .background{
         background: url("./assets/BackgroundCar.png");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+    }
+
+    .hero{
+        @include flex($fd:column);
+        background-color:$off-black-overlay;
         text-align: center;
+        backdrop-filter: contrast(.8);
 
         .heading{
             font-size: clamp(2rem, 3rem, $heading);
