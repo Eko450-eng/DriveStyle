@@ -40,8 +40,8 @@ body{
 }
 
 .ComingSoon{
+    @extend .full-size;
     @include flex();
-    height: 100%;
     color:white;
 }
 

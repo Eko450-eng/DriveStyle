@@ -2,6 +2,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { useEffect, useState }from 'react'
 import { collection, onSnapshot, query } from 'firebase/firestore';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import ComingSoon from './components/ComingSoon'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Footer from './components/Footer'
@@ -18,7 +19,7 @@ function Instagram () {
 }
 
 function App() {
-  const [dev, setDev] = useState(true);
+  const [dev, setDev] = useState(false);
   const [hagelschaden, setHagelschaden] = useState([]);
   const [gutachten, setGutachten] = useState([]);
   const location = useLocation()
@@ -44,21 +45,24 @@ function App() {
 
   return (
     <div className='App'>
-        <Navbar/>
+      { dev &&
         <TransitionGroup component={null}>
-          <CSSTransition key={location.key} classNames="fade" timeout={500}>
-            <Routes>
-              <Route index path="home" element={<Home/>}/>
-              <Route path="/" element={<Home/>}/>
-              <Route path="/wohnmobilvermietung" element={<Wohnmobil/>}/>
-              <Route path="/gutachten" element={<NormalPage title={gutachten.title} body={gutachten.body}/>}/>
-              <Route path="/hagelschaden" element={<NormalPage title={hagelschaden.title} body={hagelschaden.body}/>}/>
-              <Route path="/instagram" element={<Instagram/>}/>
-              <Route path="/cms" element={<Cms/>}/>
-            </Routes>
-          </CSSTransition>
+          <Navbar/>
+            <CSSTransition key={location.key} classNames="fade" timeout={500}>
+              <Routes>
+                <Route index path="home" element={<Home/>}/>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/wohnmobilvermietung" element={<Wohnmobil/>}/>
+                <Route path="/gutachten" element={<NormalPage title={gutachten.title} body={gutachten.body}/>}/>
+                <Route path="/hagelschaden" element={<NormalPage title={hagelschaden.title} body={hagelschaden.body}/>}/>
+                <Route path="/instagram" element={<Instagram/>}/>
+                <Route path="/cms" element={<Cms/>}/>
+              </Routes>
+            </CSSTransition>
+          <Footer />
         </TransitionGroup>
-      <Footer />
+      }
+      { !dev && <ComingSoon/> }
     </div>
   );
 }
