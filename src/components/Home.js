@@ -41,7 +41,9 @@ export default function Home() {
             <div className="hero full-size">
               <h1 className="heading">DRIVESTYLE</h1>
 
-              {<p>{homeTitle}</p>}
+              {homeTitle.map((i,k)=>{
+                return <p key={k}>{i}</p>
+              })}
 
               <div className='scroll-indicator'>
                 <div className="ball"></div>
